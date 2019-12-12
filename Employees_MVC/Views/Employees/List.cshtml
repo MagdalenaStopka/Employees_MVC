@@ -1,0 +1,29 @@
+﻿@model Employees_MVC.Models.EmployeeListFilterModel
+
+<p>Filters:</p>
+
+@Html.DropDownListFor(x => x.ManagerId, Model.Managers, new { @class = "form-control" })
+
+@Html.DisplayTextFor(x => x.Name)
+@Html.EditorFor(x => x.HireDate, new { @class = "form-control" })
+
+<div id="gridContent">
+    @{Html.RenderAction("Grid", Model); }
+</div>
+
+@section scripts{
+<script>
+    $(document).ready(function () {
+        $('#ManagerId').change(function () {
+            var managerId = $(this).val();
+           
+            $.get('@Url.Action("Grid")?ManagerId=' + managerId , function (res) {
+                $('#gridContent').html(res);
+            })
+
+        })
+    })
+</script>
+    }
+
+    

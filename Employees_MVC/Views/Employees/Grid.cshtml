@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Employees_MVC.Models.EmployeesListItemModel>
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th width="25%">Name:</th>
+                <th width="30%">Hire date:</th>
+                <th width="25%">Performance Manager:</th>
+                <th width="20%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.HireDate.ToShortDateString()</td>
+                    <td>@item.ManagerName</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="panel panel-default">
+        <div class="panel-body text-center">
+            There are no employees under this manager
+        </div>
+    </div>
+}
