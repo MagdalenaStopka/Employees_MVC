@@ -8,7 +8,7 @@ In order to use the application please follow steps:
 4. Press F5 to initialize code
 
 At the moment the application doean't meet 
-all requriemnts but I hope I would be able to fix it one day.
+all requriemnts but I hope I will be able to fix it one day.
 
 Thank You for Your time
 
